@@ -1,7 +1,5 @@
 # coding=utf-8
 '''
-CPVTON的模型定义接口。
-
 This file implements CP-VTON.
 '''
 
@@ -20,7 +18,6 @@ import sys
 from networks import GMM, UnetGenerator, load_checkpoint
 import json
 
-# 为输入提供正则化
 # normalize inputs
 transformer = transforms.Compose([
     transforms.ToTensor(),
@@ -31,7 +28,6 @@ class CPVTON(object):
 
     def __init__(self, gmm_path, tom_path, use_cuda=True):
         '''
-        初始化两个模型的预训练数据
         init pretrained models
         '''
         self.use_cuda = use_cuda
@@ -49,7 +45,6 @@ class CPVTON(object):
 
     def predict(self, parse_array, pose_map, human, c):
         '''
-        传入的前四个都是array. shape为(*,256,192)
         input 4 np array with the shape of (*,256,192)
         '''
         im = transformer(human)
@@ -59,7 +54,6 @@ class CPVTON(object):
 
         parse_shape = (parse_array > 0).astype(np.float32)
 
-        # 模糊化，下采样+上采样
         # blur, downsample + upsample
         parse_shape = Image.fromarray((parse_shape*255).astype(np.uint8))
         parse_shape = parse_shape.resize((192//16, 256//16), Image.BILINEAR)

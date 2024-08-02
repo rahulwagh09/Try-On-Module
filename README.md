@@ -1,6 +1,6 @@
 # Vitrual Try-On *Flask*
 
-[中文文档📚](http://github.com/GrayXu/Virtual-Try-On-Flask/blob/master/README_cn.md)
+(http://github.com/GrayXu/Virtual-Try-On-Flask/blob/master/README_cn.md)
 
 ![20200118004320.png](https://raw.githubusercontent.com/GrayXu/Online-Storage/master/img/20200118004320.png)![20200118004342.png](https://raw.githubusercontent.com/GrayXu/Online-Storage/master/img/20200118004342.png)![20200118004359.png](https://raw.githubusercontent.com/GrayXu/Online-Storage/master/img/20200118004359.png)
 
